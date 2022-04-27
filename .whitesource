@@ -5,7 +5,7 @@
     "projectToken": "",
     "baseBranches": [],
     "enableLicenseViolations": "true",
-    "enabledSAST": "true"
+    "enableSAST": "true"
   },
   "checkRunSettings": {
     "vulnerableCheckRunConclusionLevel": "failure",
