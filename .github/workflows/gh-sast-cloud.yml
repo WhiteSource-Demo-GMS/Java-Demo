@@ -23,8 +23,7 @@ jobs:
       # Run CLI
       - name: Run WS-SAST
         run: |
-          ./wscli --dir ./ --name=${{github.event.repository.name}}-${{github.ref_name}}-${{github.sha}} \
-          --baseline=true 
+          ./wscli --dir ./ --name=${{github.event.repository.name}}-${{github.ref_name}}-${{github.sha}} 
   codeql:
     name: CodeQL
     runs-on: ubuntu-latest
