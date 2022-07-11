@@ -1,5 +1,5 @@
 # replace .war with .jar or .ear if needed
-name: Whitesource Prioritize Java with Maven
+name: Mend Prioritize Java with Maven
 
 on:
   push:
@@ -27,7 +27,7 @@ jobs:
 
       - name: Build with Maven
         run: mvn clean install -DskipTests=true
-      - name: WhiteSource Unified Agent Scan
+      - name: Mend Unified Agent Scan
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           WS_APIKEY: ${{secrets.APIKEY}}
@@ -51,9 +51,9 @@ jobs:
           java -jar wss-unified-agent.jar -appPath $WARFILE -d ./
           chmod +x ./ghissue-eua.sh && ./ghissue-eua.sh
           
-      - name: 'Upload WhiteSource folder'
+      - name: 'Upload Mend folder'
         uses: actions/upload-artifact@v2
         with:
-          name: WhiteSource
-          path: whitesource
+          name: Mend
+          path: Mend
           retention-days: 30
